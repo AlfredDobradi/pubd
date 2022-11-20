@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  pubd:
+    image: alfreddobradi/pubd:0.0.2
+    ports:
+      - 9564:8080
+    environment:
+      - PUBD_BIND_HOST=0.0.0.0
+      - PUBD_BIND_PORT=8080
+      - PUBD_BASE_URL=self.0xa1.red
+      - PUBD_USER=barveyhirdman
+      - PUBD_KEY_PATH=/etc/pubd/barveyhirdman.pem
+    volumes:
+      - "./data:/etc/pubd"
